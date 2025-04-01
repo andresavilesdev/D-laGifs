@@ -10,7 +10,6 @@ export const AddCategory = ({ onNewCategory }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(inputValue);
 
     // Add the new category to the list
     if (inputValue.trim().length <= 1) {

@@ -5,6 +5,6 @@ import "./styles.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <GifExpert />
+      <GifExpert />
   </StrictMode>
 );
