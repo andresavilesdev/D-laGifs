@@ -1,21 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { getGifs } from "../helpers/getGifs";
-import { useEffect, useState } from "react";
 import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 export const GifGrid = ({ category }) => {
 
-  const [images, setImages] = useState([])
-
-  const getImages = async () => {
-    const imgs = await getGifs(category);
-    setImages(imgs);
-  }
-
-    useEffect(() => {
-        getImages();
-    }, []);
-
-  
+  const { images, isLoading } = useFetchGifs( category );
 
   return (
     <>
