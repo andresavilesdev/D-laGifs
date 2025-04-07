@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { GifItem } from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
+import { Loading } from "./Loading";
 export const GifGrid = ({ category }) => {
 
   const { images, isLoading } = useFetchGifs( category );
@@ -8,6 +8,9 @@ export const GifGrid = ({ category }) => {
   return (
     <>
       <h3>{category}</h3>
+      {
+        <Loading isLoading={ isLoading } />
+      }
       <div className="card-grid">
         {
           images.map( ( image ) => (
