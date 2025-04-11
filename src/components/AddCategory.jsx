@@ -1,5 +1,8 @@
 import { useState } from "react";
-export const AddCategory = ({ onNewCategory }) => {
+import ShinyText from "./bits/ShinyText";
+import { Input } from "@heroui/input";
+export const AddCategory = ({ onNewCategory, onScroll }) => {
+
   // HOOKS ----
   const [inputValue, setInputValue] = useState("");
 
@@ -10,6 +13,8 @@ export const AddCategory = ({ onNewCategory }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    onScroll(); // Scroll to the top of the page
+    
 
     // Add the new category to the list
     if (inputValue.trim().length <= 1) {
@@ -18,19 +23,26 @@ export const AddCategory = ({ onNewCategory }) => {
     }
     onNewCategory(inputValue.trim());
     setInputValue("");
+    
   };
 
   // RENDERING ----
   return (
     <form onSubmit={onSubmit}>
-      <input
+      <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
+      <Input
         type="text"
         id="search"
         placeholder="Search a gif"
         value={inputValue}
         onChange={onInputChange}
       />
-      <button>Search</button>
+      </div>
+      
+      <button>
+        <ShinyText text="Search" disabled={false} speed={2} className='custom-class' />
+
+      </button>
     </form>
   );
 };

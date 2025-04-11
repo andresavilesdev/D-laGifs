@@ -1,10 +1,14 @@
 * {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(234, 234, 234);
+  box-sizing: border-box;
 }
 
-body {
-  padding: 60px;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #060606;
+
 }
 
 input {
@@ -61,4 +65,43 @@ h3 {
 
 .card img {
   width: 100%;
+}
+
+button {
+  background-color: #000;
+  border: 1px solid #333;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: border-color 0.7s;
+  border-color: #555;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  text-align: center;
+  background-color: #060606; /* Fondo opcional para resaltar el efecto */
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* Ocupa toda la altura de la ventana */
+  text-align: center;
+  background-color: #060606; /* Fondo opcional para resaltar el efecto */
+}
+
+.category{
+  padding-left: 12%;
+  color: whitesmoke;
+  font-family: cursive;
+}
+
+Input{
+  align-items: center;
+  width: 300px;
 }

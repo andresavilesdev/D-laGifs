@@ -1,13 +1,13 @@
 import { GifItem } from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { Loading } from ".";
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, innerRef }) => {
 
   const { images, isLoading } = useFetchGifs( category );
 
   return (
-    <>
-      <h3>{category}</h3>
+    <div ref={innerRef}>
+      <h3 className="category">{category}</h3>
       {
         <Loading isLoading={ isLoading } />
       }
@@ -18,6 +18,6 @@ export const GifGrid = ({ category }) => {
           ))
         }
       </div>
-    </>
+    </div>
   );
 };

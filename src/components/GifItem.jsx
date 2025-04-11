@@ -13,7 +13,7 @@ export const GifItem = ({ title, url }) => {
                 scaleOnHover={1.2}
                 showMobileWarning={false}
                 showTooltip={true}
-                displayOverlayContent={true}
+                displayOverlayContent={false}
                 overlayContent={
                   <p className="tilted-card-demo-text">
                     {title}

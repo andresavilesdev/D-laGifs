@@ -1,5 +1,6 @@
 export * from "./AddCategory"
 export * from "./bits/TitleCard"
+export * from "./bits/ShinyText"
 export * from "./GifGrid"
 export * from "./GifItem"
 export * from "./Loading"
